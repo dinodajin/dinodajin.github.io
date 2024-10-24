@@ -34,18 +34,70 @@ class HomePage extends StatelessWidget {
           // Skills Section
           _buildSkills(),
 
+          Container(
+            height: 100,
+          ),
+
           // Projects Section
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 1. 제목 (Projects.)
               _buildTitle("Projects"),
+              Container(
+                height: 30,
+              ),
 
               // 2. 본문
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // 1. 프로젝트 1
                   Column(
-                    children: [],
+                    children: [
+                      Container(
+                        width: 167,
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 160,
+                              height: 160,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  "assets/super_resolution.png",
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 15,
+                            ),
+                            Text(
+                              "Super Resolution App",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFF38393B),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Container(
+                              height: 11,
+                            ),
+                            Text(
+                              "이미지 화질 개선 애플리케이션 개발",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFF38393B),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
 
                   // 2. 프로젝트 2
