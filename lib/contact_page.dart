@@ -18,6 +18,50 @@ class ContactPage extends StatelessWidget {
           // 1. Hero 뷰
           _buildHero(context),
           // 2. 연락처
+           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 이메일 정보
+              Row(
+                children: [
+                  Image.asset(
+                    "email_button.png",
+                    width: 40,
+                    height: 40,
+                  ),
+                  Container(width: 25),
+                  Text(
+                    "djbrachio@gmail.com",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ],
+              ),
+              Container(height: 25),
+
+              // 휴대폰 정보
+              Row(
+                children: [
+                  Image.asset(
+                    "phone_button.png",
+                    width: 40,
+                    height: 40,
+                  ),
+                  Container(width: 25),
+                  Text(
+                    "+82-10-9438-2243",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ],
+              ),
+              Container(height: 100),
+            ],
+          ),
         ],
       ),
     );
