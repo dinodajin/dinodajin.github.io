@@ -18,7 +18,7 @@ class ContactPage extends StatelessWidget {
           // 1. Hero 뷰
           _buildHero(context),
           // 2. 연락처
-           Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 이메일 정보
@@ -141,7 +141,9 @@ class ContactPage extends StatelessWidget {
                   color: Color(0xFF38393B),
                 ),
               ),
-              Container(width: 15,),
+              Container(
+                width: 15,
+              ),
               Text(
                 "Touch",
                 style: TextStyle(
@@ -156,7 +158,8 @@ class ContactPage extends StatelessWidget {
             height: 20,
           ),
           Text(
-            "Looking to partner or work together?",
+            "Looking to partner or work together? /n"
+            "Contect me!",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w300,
