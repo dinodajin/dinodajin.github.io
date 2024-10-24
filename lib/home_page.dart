@@ -32,87 +32,113 @@ class HomePage extends StatelessWidget {
           _buildHero(context),
 
           // Skills Section
-          _buildSkills()
+          _buildSkills(),
+
+          // Projects Section
+          Column(
+            children: [
+              // 1. 제목 (Projects.)
+              _buildTitle("Projects"),
+
+              // 2. 본문
+              Row(
+                children: [
+                  // 1. 프로젝트 1
+                  Column(
+                    children: [],
+                  ),
+
+                  // 2. 프로젝트 2
+
+                  // 3. 프로젝트 3
+                ],
+              )
+            ],
+          )
         ],
       ),
       backgroundColor: Color(0xFFF2F2F2),
     );
   }
 
-  Container _buildSkills() {
-    return Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 135,
-              ),
+  Widget _buildSkills() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 135,
+        ),
 
-              // 1. 타이틀 (Skills)
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                        text: "Skills",
-                        style: TextStyle(
-                          fontSize: 45,
-                          fontWeight: FontWeight.w900,
-                          color: Color(0xFF6327E9),
-                        )),
-                    TextSpan(
-                        text: ".",
-                        style: TextStyle(
-                          fontSize: 45,
-                          fontWeight: FontWeight.w900,
-                          color: Color(0xFF38393B),
-                        )),
-                  ],
-                ),
-              ),
+        // 1. 타이틀 (Skills)
+        _buildTitle("Skills"),
 
-              // 2. 본문 내용
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // 1. FrontEnd
-                  _buildSkillsContents(
-                      "FrontEnd", ["JavaScript", "CSS", "React", "NextJS"]),
-                  Container(
-                    width: 100,
-                  ),
+        // 2. 본문 내용
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 1. FrontEnd
+            _buildSkillsContents(
+                "FrontEnd", ["JavaScript", "CSS", "React", "NextJS"]),
+            Container(
+              width: 100,
+            ),
 
-                  // 2. BackEnd
-                  _buildSkillsContents(
-                      "BackEnd", ["Python", "Fast API", "Java", "Spring"]),
-                  Container(
-                    width: 100,
-                  ),
+            // 2. BackEnd
+            _buildSkillsContents(
+                "BackEnd", ["Python", "Fast API", "Java", "Spring"]),
+            Container(
+              width: 100,
+            ),
 
-                  // 3. DataBase
-                  _buildSkillsContents("DataBase", ["Dynamo DB", "Mongo DB"]),
-                  Container(
-                    width: 100,
-                  ),
+            // 3. DataBase
+            _buildSkillsContents("DataBase", ["Dynamo DB", "Mongo DB"]),
+            Container(
+              width: 100,
+            ),
 
-                  // 4. App
-                  _buildSkillsContents("App", ["Flutter", "Kotlin"]),
-                  Container(
-                    width: 100,
-                  ),
+            // 4. App
+            _buildSkillsContents("App", ["Flutter", "Kotlin"]),
+            Container(
+              width: 100,
+            ),
 
-                  // 5. Cloud
-                  _buildSkillsContents("Cloud", ["AWS", "Docker"]),
-                  Container(
-                    width: 100,
-                  ),
+            // 5. Cloud
+            _buildSkillsContents("Cloud", ["AWS", "Docker"]),
+            Container(
+              width: 100,
+            ),
 
-                  // 6. Soft Skills
-                  _buildSkillsContents("Soft Skills",
-                      ["Communication", "Problem Solving", "Teamwork"]),
-                ],
-              )
-            ],
-          ),
+            // 6. Soft Skills
+            _buildSkillsContents("Soft Skills",
+                ["Communication", "Problem Solving", "Teamwork"]),
+          ],
+        )
+      ],
+    );
+  }
+
+  RichText _buildTitle(String title) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+              text: title,
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF6327E9),
+              )),
+          TextSpan(
+              text: ".",
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF38393B),
+              )),
+        ],
+      ),
+    );
   }
 
   Column _buildSkillsContents(String title, List<String> skills) {
@@ -126,6 +152,9 @@ class HomePage extends StatelessWidget {
             fontWeight: FontWeight.w900,
             color: Color(0xFF38393B),
           ),
+        ),
+        Container(
+          height: 20,
         ),
         for (var skill in skills)
           Text(
